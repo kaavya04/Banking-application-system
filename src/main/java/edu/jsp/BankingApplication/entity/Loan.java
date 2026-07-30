@@ -1,0 +1,96 @@
+package edu.jsp.BankingApplication.entity;
+
+import java.time.LocalDateTime;
+
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+public class Loan {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
+	private double amount;
+	private LocalDateTime applyDate; 
+	private LocalDateTime approvalDate;
+	private LocalDateTime disbrusmentDate;
+	private double balance;
+	private String status;
+	
+	@ManyToOne
+	@JoinColumn
+	private User user;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+
+	public LocalDateTime getApplyDate() {
+		return applyDate;
+	}
+
+	public void setApplyDate(LocalDateTime applyDate) {
+		this.applyDate = applyDate;
+	}
+
+	public LocalDateTime getApprovalDate() {
+		return approvalDate;
+	}
+
+	public void setApprovalDate(LocalDateTime approvalDate) {
+		this.approvalDate = approvalDate;
+	}
+
+	public LocalDateTime getDisbrusmentDate() {
+		return disbrusmentDate;
+	}
+
+	public void setDisbrusmentDate(LocalDateTime disbrusmentDate) {
+		this.disbrusmentDate = disbrusmentDate;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
+	
+	
+	
+	
+	
+}
